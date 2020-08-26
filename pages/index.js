@@ -2,7 +2,7 @@ import Link from 'next/Link';
 import Layout from '../components/Layout';
 
 const Index = () => (
-    <Layout>
+    <Layout title="Home">
         <h1>Home</h1>
         <Link href="/about">
             <a>Go to About</a>
