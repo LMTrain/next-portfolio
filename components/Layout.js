@@ -64,12 +64,12 @@ export default ({ children, title}) => (
                 padding: 1em;
             }
         `}</style>
-        {/* <style global jsx>{`
+        <style global jsx>{`
             body {
                 margin: 0;
                 font-size: 110%;
                 background: #f0f0f0
             }
-        `}</style> */}
+        `}</style>
     </div>
 );
