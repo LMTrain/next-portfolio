@@ -11,7 +11,8 @@ export default class About extends Component {
                     <a>Go to home</a>
                 </Link>
                 <p>A JavaScript programmer</p>
-                <img src="/static/logo512.png" alt="React logo" height="200px"/>
+                <img src="https://lmtrain.github.io/lm-images/assets/images/bugatti_1.jpg" alt="React logo" height="200px"/>
+                <img src="https://lmtrain.github.io/lm-images/assets/images/bugatti_5.jpg" alt="React logo" height="200px"/>
             </Layout>
         );
 
