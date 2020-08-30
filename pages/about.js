@@ -8,7 +8,7 @@ export default class About extends Component {
     //     user: null
     // };
     static async getInitialProps() {
-            const res = await fetch('https://api.github.com/users/lmtrainpopo')
+            const res = await fetch('https://api.github.com/users/lmtrain')
             const statusCode = res.status > 200 ? res.status : false;
             const data = await res.json();
             
