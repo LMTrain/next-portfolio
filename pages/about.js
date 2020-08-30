@@ -1,6 +1,6 @@
-import Link from 'next/Link';
 import Layout from '../components/Layout';
 // import fetch from "isomorphic-unfetch";
+import Error from './_error';
 import { Component } from 'react';
 
 export default class About extends Component {
@@ -8,10 +8,11 @@ export default class About extends Component {
     //     user: null
     // };
     static async getInitialProps() {
-            const res = await fetch('https://api.github.com/users/lmtrain')
+            const res = await fetch('https://api.github.com/users/lmtrainpopo')
+            const statusCode = res.status > 200 ? res.status : false;
             const data = await res.json();
             
-            return { user: data};
+            return { user: data, statusCode};
     }
     // componentDidMount() {
     //     fetch('https://api.github.com/users/lmtrain') npm i isomorphic-unfetch
@@ -23,7 +24,11 @@ export default class About extends Component {
     //         })
     // }
     render() {
-        const { user } = this.props;
+        const { user, statusCode } = this.props;
+
+        if (statusCode) {
+            return <Error statusCode={statusCode} />;
+        }
         return (
             <Layout title="About">
                 
