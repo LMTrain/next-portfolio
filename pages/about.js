@@ -4,9 +4,6 @@ import Error from './_error';
 import { Component } from 'react';
 
 export default class About extends Component {
-    // state = {
-    //     user: null
-    // };
     static async getInitialProps() {
             const res = await fetch('https://api.github.com/users/lmtrain')
             const statusCode = res.status > 200 ? res.status : false;
@@ -14,15 +11,7 @@ export default class About extends Component {
             
             return { user: data, statusCode};
     }
-    // componentDidMount() {
-    //     fetch('https://api.github.com/users/lmtrain') npm i isomorphic-unfetch
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             this.setState({
-    //                 user: data
-    //             });
-    //         })
-    // }
+   
     render() {
         const { user, statusCode } = this.props;
 
@@ -41,7 +30,3 @@ export default class About extends Component {
     }
 }
 
-// About.getInitialProps = () => {
-
-// }
-    
