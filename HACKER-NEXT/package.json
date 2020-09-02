@@ -1,0 +1,16 @@
+{
+  "name": "hacker-next",
+  "version": "1.0.0",
+  "description": "A Hacker news clone made with Next.js",
+  "main": "server.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "author": "Laycon Muriziq",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.5.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
