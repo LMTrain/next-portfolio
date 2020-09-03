@@ -24,7 +24,7 @@ class Index extends React.Component {
             return <Error statusCode={503} />
         }
         return (
-            <Layout title="Hacker Next" description="A Hacker News clone made with Next.js">
+            <Layout title="Hacker Using Next.js" description="A Hacker News clone made with Next.js">
                 <StoryList stories={stories} />
             </Layout>
         )
