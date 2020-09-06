@@ -5,4 +5,4 @@ export default ({ comments }) => (
             <comment key={comment.id} comment={comment} />
         ))}
     </React.Fragment>
-)
+);
