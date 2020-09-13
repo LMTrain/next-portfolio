@@ -48,7 +48,7 @@ class Index extends React.Component {
 
                 <footer>
                     <Link href={`/?page=${page + 1}`}>
-                        <a>Next Page ({page + 1})</a>
+                        <a>Next Page by LM Systems({page + 1})</a>
                     </Link>
                 </footer>
                 <style>{`

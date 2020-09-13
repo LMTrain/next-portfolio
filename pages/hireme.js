@@ -4,7 +4,7 @@ const HireMe = () => (
     <Layout title="Hire Me">
        
         <p>
-            You can hie me at{" "}
+            You can hire me at{" "}
             <a href="mailto:lmme@gmail.com">lmme@gmail.com</a>
         </p>
     </Layout>
