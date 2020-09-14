@@ -17,6 +17,7 @@ export default () => (
             <PostLink slug="angular-post" title= "Angular Post" />
             <PostLink slug="vue-post" title= "Vue Post" />
             <PostLink slug="nextjs-post" title= "Nextjs Post" />
+            <PostLink slug="nextjs-post" title= "Nextjs Post" />
         </ul>
     </Layout>
 )
