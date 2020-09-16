@@ -24,6 +24,7 @@ export default class About extends Component {
                 <p>{user.name}</p>
                 <img src={user.avatar_url} alt="LMTrain Pic" height="200px"/>
                 <img src="https://lmtrain.github.io/lm-images/assets/images/bugatti_5.jpg" alt="React logo" height="200px"/>
+                <img src="https://lmtrain.github.io/lm-images/assets/images/bugatti_3.jpg" alt="React logo" height="200px"/>
             </Layout>
         );
 
