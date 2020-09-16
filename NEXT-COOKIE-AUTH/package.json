@@ -4,7 +4,7 @@
   "description": "Cookie authentication with Next.js",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "nodemon server.js"
   },
   "author": "Laycon Muriziq",
   "license": "ISC",
@@ -13,5 +13,8 @@
     "next": "^9.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
