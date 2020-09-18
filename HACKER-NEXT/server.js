@@ -1,27 +1,59 @@
 const next = require('next');
-const http = require('http');
-const url = require('url');
-const path = require('path');
+const express = require('express');
+const axios = require('axios');
+const cookieParser = require('cookie-parser');
 
-const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== 'production';
+const port = process.env.PORT || 3000;
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-app.prepare().then(() => {
-    http.createServer((req, res) => {
-        /*parse request url to get its pathname */
-        const parsedUrl = url.parse(req.url, true);
-        const { pathname } = parsedUrl;
+const AUTH_USER_TYPE = "authenticated";
+const COOKIE_SECRET = 'Lily13362';
+const COOKIE_OPTIONS = {
+    httpOnly: true,
+    secure: !dev,
+    signed: true
+};
 
-        /*If a service worker requested, serve it as a static file */
-        if (pathname === '/service-worker.js') {
-            const filePath = path.join(__dirname, '.next', pathname);
-            app.serveStatic(req, res, filePath);
-        } else {
-            handle(req, res, parsedUrl);
+const authenticate = async (email, password) => {
+    const { data } = await axios.get
+    ('https://jsonplaceholder.typicode.com/users');
+    return data.find(user => {
+        if (user.email === email && user.website === password) {
+            return user;
         }
-    }).listen(port, () => {
-        console.log(`Listening on PORT ${port}`);
     })
-})
+}
+
+app.prepare().then(() => {
+    const server = express();
+
+    server.use(express.json());
+    server.use(cookieParser(COOKIE_SECRET))
+
+    server.post('/api/login', async (req, res) => {
+        const { email, password } = req.body;
+        const user = await authenticate(email, password);
+        if (!user) {
+            return res.status(403).send("Invalid email or Password");
+        }
+        const userData = {
+            name: user.name,
+            email: user.email,
+            type: AUTH_USER_TYPE
+        }
+        res.cookie('token', userData, COOKIE_OPTIONS);
+        res.json(userData);
+    });
+
+    server.get("*", (req, res) => {
+        return handle(req, res);
+    });
+
+    server.listen(port, err => {
+        if (err) throw err;
+        console.log(`Listening on PORT ${port}`);
+    });
+
+});
