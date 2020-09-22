@@ -37,6 +37,7 @@ class LoginForm extends React.Component {
                     onChange={this.handleChange}
                 /></div>
                 <button type="submit">Submit</button>
+                <button type="submit">Submit</button>
             </form>
 
         )
