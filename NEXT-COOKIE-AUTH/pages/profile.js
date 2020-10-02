@@ -3,6 +3,7 @@ import { getUserProfile } from '../lib/auth';
 
 
 export default class Profile extends React.Component {
+    // Set a State
     state = {
         user: null
     };
