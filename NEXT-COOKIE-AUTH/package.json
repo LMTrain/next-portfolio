@@ -9,6 +9,8 @@
   "author": "Laycon Muriziq",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "next": "^9.5.3",
     "react": "^16.13.1",
