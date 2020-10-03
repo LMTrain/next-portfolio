@@ -3,6 +3,7 @@ import Router from 'next/router';
 
 
 class LoginForm extends React.Component {
+    // Setting the State
     state = {
         email: '',
         password: '',
