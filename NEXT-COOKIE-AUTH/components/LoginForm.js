@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
             Router.push("/profile");
         })
         .catch(this.showError);
-        // console.log(this.state);
+        console.log(this.state);
     };
 
     showError = err => {
