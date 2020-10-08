@@ -5,7 +5,7 @@ export default function Index() {
     return (
         <Layout title="Home">
             <Link href="/profile">
-                <a>My profile</a>
+                <a>Click on My profile</a>
             </Link>
         </Layout>
     )
