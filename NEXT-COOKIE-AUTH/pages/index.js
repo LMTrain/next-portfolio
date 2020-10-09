@@ -7,6 +7,9 @@ export default function Index() {
             <Link href="/profile">
                 <a>Click on My profile</a>
             </Link>
+            <Link href="/profile">
+                <a>Click on My profile</a>
+            </Link>
         </Layout>
     )
 }
