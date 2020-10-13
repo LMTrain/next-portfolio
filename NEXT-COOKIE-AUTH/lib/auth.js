@@ -13,7 +13,7 @@ export const getServerSideToken = req => {
     return { user: signedCookies.token }
 }
 
-const WINDOW_USER_SCRIPT_VARIABLE = "__USER__";
+const WINDOW_USER_SCRIPT_VARIABLE = '__USER__';
 
 export const getUserScript = user => {
     return `${WINDOW_USER_SCRIPT_VARIABLE} = ${JSON.stringify(user)};`;
@@ -21,7 +21,7 @@ export const getUserScript = user => {
 
 export const loginUser = async (email, password) => {
     const { data } = await axios.post('/api/login', { email, password });
-    // console.log(data);
+    console.log(data);
     if (typeof window !== 'undefined') {
         window[WINDOW_USER_SCRIPT_VARIABLE] = data || {};
     }

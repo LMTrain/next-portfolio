@@ -3,10 +3,9 @@ import Router from 'next/router';
 
 
 class LoginForm extends React.Component {
-    // Setting the State
     state = {
-        email: '',
-        password: '',
+        email: 'Rey.Padberg@karina.biz',
+        password: 'ambrose.net',
         error: '',
         isLoading: false
     };
@@ -24,7 +23,7 @@ class LoginForm extends React.Component {
             Router.push("/profile");
         })
         .catch(this.showError);
-        console.log(this.state);
+        // console.log(this.state);
     };
 
     showError = err => {
@@ -34,26 +33,30 @@ class LoginForm extends React.Component {
     }
 
     render() {
-        const { error, isLoading } = this.state;
+        const { email, password, error, isLoading } = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
-                <div><input type="email"
+                <div><input 
+                    type="email"
                     name="email"
                     placeholder="email"
+                    value={email}
                     onChange={this.handleChange}
                 /></div>
                 <div><input type="pasword"
                     name="password"
                     placeholder="password"
+                    value={password}
                     onChange={this.handleChange}
-                /></div>
+                />
+                </div>
                 <button disabled={isLoading} type="submit">
                     {isLoading ? "Sending" : "Submit"}
                 </button>
                 {error && <div>{error}</div>}
             </form>
 
-        )
+        );
     }
 }
 
