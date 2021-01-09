@@ -129,6 +129,7 @@ app.prepare().then(() => {
     handle(req, res);
   });
 
+  //Server listening on choosen port
   server.listen(port, err => {
     if (err) throw err;
     console.log(`Server listening on ${port}`);
