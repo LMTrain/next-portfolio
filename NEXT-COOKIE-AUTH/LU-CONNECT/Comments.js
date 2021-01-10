@@ -6,6 +6,7 @@
 // import Delete from "@material-ui/icons/Delete";
 import withStyles from "@material-ui/core/styles/withStyles";
 
+//Declared a Class statement
 class Comments extends React.Component {
   state = {};
 
