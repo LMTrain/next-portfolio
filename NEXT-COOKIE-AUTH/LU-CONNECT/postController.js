@@ -18,6 +18,7 @@ const imageUploadOptions = {
   }
 };
 
+//Export uploaded image
 exports.uploadImage = multer(imageUploadOptions).single("image");
 
 exports.resizeImage = async (req, res, next) => {
