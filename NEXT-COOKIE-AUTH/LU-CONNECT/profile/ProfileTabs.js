@@ -6,6 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import Post from "../../components/index/Post";
 import FollowTab from "../../components/profile/FollowTab";
 
+//Declare Profile tab Class
 class ProfileTabs extends React.Component {
   state = {
     tab: 0
