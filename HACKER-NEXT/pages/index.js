@@ -4,7 +4,7 @@ import Link from 'next/link';
 import StoryList from '../components/StoryList';
 import Layout from '../components/Layout';
 
-
+//Declare a class for Index
 class Index extends React.Component {
     static async getInitialProps({ req, res, query }) {
         let stories;
