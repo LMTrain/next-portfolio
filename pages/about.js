@@ -9,6 +9,7 @@ export default class About extends Component {
             const statusCode = res.status > 200 ? res.status : false;
             const data = await res.json();
             
+            console.log(data)
             return { user: data, statusCode};
     }
    
